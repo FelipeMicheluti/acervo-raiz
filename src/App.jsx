@@ -1,15 +1,18 @@
-import { Header } from "./components/Header";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navbar } from "./components/Navbar";
+import { HomePage } from "./pages/Home/indx";
+import { Setting } from "./pages/Setting";
 
-
-export const App = () => {
+function App() {
   return (
+    <Router>
+      <Navbar/>
 
-    <main className="min-h-dvh flex flex-col bg-[#8C2323]">
-      <Header  />
-      <div className="bg-white flex items-center"></div>
-
-      
-    </main>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/config" element={<Setting />} />
+      </Routes>
+    </Router>
   );
 }
 
