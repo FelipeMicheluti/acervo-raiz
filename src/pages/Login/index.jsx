@@ -16,7 +16,7 @@
                     text-black
                 ">
 
-            {/* Campos fake para parecer com o formulário da imagem */}
+            
             <input
                 type="text"
                 placeholder="Name"

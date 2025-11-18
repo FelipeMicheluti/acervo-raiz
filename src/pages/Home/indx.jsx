@@ -7,11 +7,13 @@ import Footer from "../../components/Footer";
 export const HomePage = () => {
     return (
         <div className="flex flex-col w-full min-h-screen bg-[#7A1D1D] text-white">
-            {/*  Search  */}<Header/>
+          <Header/>
             
             {/*  Top Box */}
             <div className="flex justify-center mt-10">
-                <div className="bg-[#D9D9D9] w-3/4 h-48 rounded-sm" />
+                <div className="bg-[#D9D9D9] w-3/4 h-48 rounded-sm">
+                
+                hygjghd</div>
             </div>
 
 
@@ -24,7 +26,7 @@ export const HomePage = () => {
 
                     {/* Lines */}
                     <div className="flex flex-col justify-center gap-4 w-full">
-                        <div className="w-1/2 h-2px bg-white" />
+                        <div className="w-1/2 h-2px  text-gray-400" > alalalal</div>
                         <div className="w-3/4 h-2px bg-white" />
                         <div className="w-full h-2px bg-white" />
                     </div>
@@ -34,11 +36,13 @@ export const HomePage = () => {
 
             {/* Bottom Box */}
             <div className="flex justify-center mt-20 mb-10">
-                <div className="bg-[#D9D9D9] w-3/4 h-40" />
+                <div className="bg-[#D9D9D9] w-3/4 h-40">
+                ghhfg
+                </div>
             </div>
 
 
-            {/* Bottom Divider */}
+        
             <Footer/>
         </div>
     );
