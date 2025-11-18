@@ -1,6 +1,6 @@
-import {React }from 'react';
+import { React } from 'react';
 
-const FormField = ({ id, label, type = 'text', value, onChange, placeholder = '' }) => (
+export const FormField = ({ id, label, type = 'text', value, onChange, placeholder = '' }) => (
   <div>
     <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">
       {label}

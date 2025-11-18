@@ -1,19 +1,21 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Navbar } from "./components/Navbar";
+import { React } from "react"
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { HomePage } from "./pages/Home/indx";
-import { Setting } from "./pages/Setting";
+import { CreateReport } from "./pages/CreateReport";
+import { Reports } from "./pages/Reports";
+import { SingUp } from "./pages/SignUp";
 
-function App() {
+
+export default function App() {
   return (
-    <Router>
-      <Navbar/>
 
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/config" element={<Setting />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/Create" element={<CreateReport />} />
+      <Route path="/Reports" element={<Reports />} />
+      <Route path="/SingUp" element={<SingUp/>} />
+    </Routes>
+
   );
 }
 
-export default App;
