@@ -10,7 +10,7 @@ export const Header = () => {
 
 
 
-        <header className="bg-gray-400 p-7 flex items-center w-full justify-end h-9">
+        <header className="bg-gray-400 p-7 flex items-center w-full justify-end h-9 italic">
 
             <div className="flex ">
                 <button className="text-black hover:text-gray-600 mr-4">

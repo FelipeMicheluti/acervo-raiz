@@ -1,222 +1,109 @@
 import Footer from "../../components/Footer";
 import { Header } from "../../components/Header";
-import { BarChart3, PieChart, FileBarChart, LineChart, TrendingUp, Download, ListTree } from "lucide-react";
+import { Upload } from "lucide-react"; 
 
 export const Reports = () => {
     return (
-        <div className="flex flex-col w-full min-h-screen bg-[#7A1D1D] text-black">
+       
+        <div className="flex flex-col w-full min-h-screen bg-[#7A1D1D] text-black italic">
             <Header />
 
-            <div className="flex justify-center items-center w-full mt-12 px-4">
+            <div className="flex justify-center items-center w-full mt-12 px-4 mb-20"> {/* Aumentei a margem inferior (mb-20) */}
                 <div className="bg-white w-[850px] min-h-[520px] rounded-xl shadow-xl p-10 border border-[#dcdcdc]">
 
-                    {/* Topo estilo Power BI */}
-                    <div className="flex items-center gap-4 mb-8">
-                        <FileBarChart size={50} className="text-[#7A1D1D]" />
-                        <div>
-                            <h1 className="text-2xl font-bold tracking-wide">Dashboard de Relatórios</h1>
-                            <p className="text-sm text-gray-600">
-                                Visualização e análise consolidada de indicadores estratégicos
-                            </p>
-                        </div>
+               
+                    <div className="flex flex-col gap-2 mb-8 items-center text-center">
+                        <Upload size={50} className="text-[#7A1D1D] opacity-80" />
+                        <h1 className="text-3xl font-light tracking-wide text-gray-800">Enviar Nova História</h1>
+                        <p className="text-sm text-gray-600">
+                            Compartilhe suas memórias, lendas e contos com a comunidade
+                        </p>
                     </div>
 
                     <hr className="border-gray-300 mb-8" />
 
-                    {/* Formulário */}
-                    <form className="grid grid-cols-3 gap-6 text-black mb-10">
+          
+                    <form className="flex flex-col gap-6 text-black mb-10">
+
+                        <div className="flex flex-col gap-2">
+                            <h2 className="text-lg font-bold text-gray-700">Detalhes da História</h2>
+                            <p className="text-sm text-gray-500 italic">
+                                Preencha todos os campos para compartilhar sua narrativa
+                            </p>
+                        </div>
+
+                     
+                        <div className="flex flex-col">
+                            <label className="text-sm font-semibold mb-1">Título da História <span className="text-red-500">*</span></label>
+                            <p className="text-xs text-gray-500 mb-2">Ex.: A Lenda da Cuca no Interior</p>
+                            <input type="text" className="border p-3 rounded-md shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#7A1D1D]" placeholder="Digite o título aqui" />
+                        </div>
+
+                  
+                        <div className="flex flex-col">
+                            <label className="text-sm font-semibold mb-1">Resumo <span className="text-red-500">*</span></label>
+                            <p className="text-xs text-gray-500 mb-2">Um breve resumo da história (máx. 200 caracteres)</p>
+                            <textarea className="border p-3 rounded-md shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#7A1D1D] resize-none" rows="3" maxLength="200" placeholder="0/200 caracteres"></textarea>
+                        </div>
+
+                
+                        <div className="flex flex-col">
+                            <label className="text-sm font-semibold mb-1">História Completa <span className="text-red-500">*</span></label>
+                            <p className="text-xs text-gray-500 mb-2">Conte sua história com todos os detalhes...</p>
+                            <textarea className="border p-3 rounded-md shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#7A1D1D] resize-y" rows="8" placeholder="Digite a história completa aqui"></textarea>
+                        </div>
+
+              
+                        <div className="grid grid-cols-2 gap-6">
+                            <div className="flex flex-col">
+                                <label className="text-sm font-semibold mb-1">Local de Origem <span className="text-red-500">*</span></label>
+                                <p className="text-xs text-gray-500 mb-2">Ex.: São Paulo - Centro</p>
+                                <input type="text" className="border p-3 rounded-md shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#7A1D1D]" placeholder="Digite o local" />
+                            </div>
+
+                            <div className="flex flex-col">
+                                <label className="text-sm font-semibold mb-1">Região <span className="text-red-500">*</span></label>
+                                <p className="text-xs text-gray-500 mb-2">Selecione a região</p>
+                                <select className="border p-3 rounded-md bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7A1D1D]">
+                                    <option value="">Selecione a região</option>
+                                    <option>Capital</option>
+                                    <option>Litoral</option>
+                                    <option>Interior</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <div className="flex flex-col">
-                            <label className="text-sm font-semibold">Tipo de Relatório</label>
-                            <select className="border p-2 rounded-md bg-white shadow-sm focus:outline-[#7A1D1D]">
-                                <option>Vendas</option>
-                                <option>Estoque</option>
-                                <option>Clientes</option>
-                                <option>Financeiro</option>
-                                <option>Operacional</option>
+                            <label className="text-sm font-semibold mb-1">Categoria <span className="text-red-500">*</span></label>
+                            <p className="text-xs text-gray-500 mb-2">Selecione a categoria</p>
+                            <select className="border p-3 rounded-md bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7A1D1D]">
+                                <option value="">Selecione a categoria</option>
+                                <option>Lenda Urbana</option>
+                                <option>Memória Pessoal</option>
+                                <option>Conto Popular</option>
+                                <option>História de Família</option>
                             </select>
                         </div>
 
-                        <div className="flex flex-col">
-                            <label className="text-sm font-semibold">Data Inicial</label>
-                            <input type="date" className="border p-2 rounded-md shadow-sm bg-white focus:outline-[#7A1D1D]" />
-                        </div>
+                        <hr className="border-gray-300 mt-4" />
 
-                        <div className="flex flex-col">
-                            <label className="text-sm font-semibold">Data Final</label>
-                            <input type="date" className="border p-2 rounded-md shadow-sm bg-white focus:outline-[#7A1D1D]" />
-                        </div>
+              
+                        <div className="flex justify-between items-center pt-2">
+                            <button
+                                type="button"
+                                className="text-gray-600 font-semibold py-3 px-6 rounded-md hover:bg-gray-100 transition"
+                            >
+                                Cancelar
+                            </button>
 
-                        {/* Botão */}
-                        <div className="col-span-3">
-                            <button className="bg-[#7A1D1D] w-full py-3 text-white font-semibold rounded-md hover:bg-[#5e1414] transition">
-                                Gerar Relatório
+                            <button
+                                type="submit"
+                                className="bg-[#7A1D1D] flex items-center gap-2 py-3 px-8 text-white font-semibold rounded-md hover:bg-[#5e1414] transition shadow-lg"
+                            >
+                                <Upload size={20} /> Enviar História
                             </button>
                         </div>
                     </form>
-
-                    {/* Filtros adicionais */}
-                    <div className="mb-10">
-                        <h2 className="text-lg font-semibold mb-3">Filtros Avançados</h2>
-
-                        <div className="grid grid-cols-3 gap-6">
-
-                            <select className="border p-2 rounded-md bg-white shadow-sm focus:outline-[#7A1D1D]">
-                                <option>Categoria</option>
-                                <option>Região</option>
-                                <option>Responsável</option>
-                                <option>Unidade</option>
-                            </select>
-
-                            <select className="border p-2 rounded-md bg-white shadow-sm focus:outline-[#7A1D1D]">
-                                <option>Ano Fiscal</option>
-                                <option>2025</option>
-                                <option>2024</option>
-                                <option>2023</option>
-                            </select>
-
-                            <select className="border p-2 rounded-md bg-white shadow-sm focus:outline-[#7A1D1D]">
-                                <option>Status</option>
-                                <option>Ativo</option>
-                                <option>Inativo</option>
-                                <option>Pendente</option>
-                            </select>
-
-                        </div>
-                    </div>
-
-                    <hr className="border-gray-300 mb-8" />
-
-                    {/* Cards estilo Power BI */}
-                    <div className="grid grid-cols-3 gap-6 mb-10">
-
-                        <div className="bg-[#7A1D1D] text-white p-5 rounded-lg shadow-md">
-                            <h3 className="font-semibold text-lg">Total de Vendas</h3>
-                            <p className="text-3xl font-bold mt-2">R$ 128.450</p>
-                            <span className="text-sm opacity-80">+12% este mês</span>
-                        </div>
-
-                        <div className="bg-[#F2F2F2] p-5 rounded-lg shadow-md border">
-                            <h3 className="font-semibold text-lg text-[#333]">Clientes Ativos</h3>
-                            <p className="text-3xl font-bold text-[#7A1D1D] mt-2">320</p>
-                            <span className="text-sm text-gray-600">+8 novos esta semana</span>
-                        </div>
-
-                        <div className="bg-[#F2F2F2] p-5 rounded-lg shadow-md border">
-                            <h3 className="font-semibold text-lg text-[#333]">Produtos em Estoque</h3>
-                            <p className="text-3xl font-bold text-[#7A1D1D] mt-2">1.540</p>
-                            <span className="text-sm text-gray-600">Estabilidade no período</span>
-                        </div>
-
-                    </div>
-
-                    {/* Indicadores extra */}
-                    <div className="grid grid-cols-3 gap-6 mb-10">
-                        <div className="bg-white border p-5 rounded-lg shadow-sm">
-                            <div className="flex items-center gap-2">
-                                <TrendingUp className="text-[#7A1D1D]" />
-                                <h3 className="font-semibold">Ticket Médio</h3>
-                            </div>
-                            <p className="text-2xl font-bold mt-2">R$ 402</p>
-                            <span className="text-xs text-gray-500">+3% vs. mês anterior</span>
-                        </div>
-
-                        <div className="bg-white border p-5 rounded-lg shadow-sm">
-                            <div className="flex items-center gap-2">
-                                <LineChart className="text-[#7A1D1D]" />
-                                <h3 className="font-semibold">Crescimento</h3>
-                            </div>
-                            <p className="text-2xl font-bold mt-2">7,8%</p>
-                            <span className="text-xs text-gray-500">Últimos 90 dias</span>
-                        </div>
-
-                        <div className="bg-white border p-5 rounded-lg shadow-sm">
-                            <div className="flex items-center gap-2">
-                                <ListTree className="text-[#7A1D1D]" />
-                                <h3 className="font-semibold">Categorias</h3>
-                            </div>
-                            <p className="text-2xl font-bold mt-2">12</p>
-                            <span className="text-xs text-gray-500">Categorias monitoradas</span>
-                        </div>
-                    </div>
-
-                    {/* Gráficos principais */}
-                    <div className="grid grid-cols-2 gap-6 mb-10">
-
-                        <div className="bg-white border shadow-md rounded-lg p-5 flex flex-col items-center">
-                            <BarChart3 size={35} className="text-[#7A1D1D]" />
-                            <p className="mt-3 font-semibold">Gráfico de Vendas</p>
-                            <div className="mt-4 w-full h-[160px] bg-gradient-to-b from-[#7A1D1D]/30 to-[#d3d3d3] rounded-md"></div>
-                        </div>
-
-                        <div className="bg-white border shadow-md rounded-lg p-5 flex flex-col items-center">
-                            <PieChart size={35} className="text-[#7A1D1D]" />
-                            <p className="mt-3 font-semibold">Distribuição por Categoria</p>
-                            <div className="mt-4 w-full h-[160px] bg-gradient-to-b from-[#7A1D1D]/30 to-[#d3d3d3] rounded-md"></div>
-                        </div>
-
-                    </div>
-
-                    {/* Tabela de resumo */}
-                    <div className="mb-10">
-                        <h2 className="font-semibold text-lg mb-3">Resumo por Categoria</h2>
-
-                        <table className="w-full text-sm border rounded-lg overflow-hidden">
-                            <thead className="bg-[#7A1D1D] text-white">
-                                <tr>
-                                    <th className="p-2 text-left">Categoria</th>
-                                    <th className="p-2 text-left">Vendas</th>
-                                    <th className="p-2 text-left">Crescimento</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr className="border">
-                                    <td className="p-2">Eletrônicos</td>
-                                    <td className="p-2">R$ 47.000</td>
-                                    <td className="p-2 text-green-600">+15%</td>
-                                </tr>
-                                <tr className="border">
-                                    <td className="p-2">Moda</td>
-                                    <td className="p-2">R$ 22.800</td>
-                                    <td className="p-2 text-red-600">-3%</td>
-                                </tr>
-                                <tr className="border">
-                                    <td className="p-2">Casa & Jardim</td>
-                                    <td className="p-2">R$ 18.500</td>
-                                    <td className="p-2 text-green-600">+8%</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    {/* Atividades Recentes */}
-                    <div className="mb-10">
-                        <h2 className="font-semibold text-lg mb-3">Atividades Recentes</h2>
-
-                        <ul className="space-y-2 text-sm">
-                            <li className="p-2 bg-gray-100 rounded-md border">Relatório Financeiro exportado às 09:12</li>
-                            <li className="p-2 bg-gray-100 rounded-md border">Dashboard de Clientes atualizado</li>
-                            <li className="p-2 bg-gray-100 rounded-md border">Modelo de Vendas recalculado</li>
-                        </ul>
-                    </div>
-
-                    {/* Insights */}
-                    <div className="mb-10">
-                        <h2 className="font-semibold text-lg mb-2">Insights Automáticos</h2>
-
-                        <div className="bg-[#F9F1F1] border-l-4 border-[#7A1D1D] p-4 rounded-md text-sm">
-                            As vendas do último trimestre apresentaram crescimento consistente,
-                            porém algumas categorias mostram tendência de desaceleração. Considere
-                            revisar campanhas de marketing para segmentos com queda.
-                        </div>
-                    </div>
-
-                    {/* Exportação */}
-                    <div className="mb-4 text-center">
-                        <button className="flex items-center gap-2 mx-auto bg-[#7A1D1D] text-white px-4 py-2 rounded-md hover:bg-[#5e1414] transition shadow-md">
-                            <Download size={18} /> Exportar Relatório
-                        </button>
-                    </div>
 
                 </div>
             </div>

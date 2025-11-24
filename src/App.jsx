@@ -5,6 +5,9 @@ import { CreateReport } from "./pages/CreateReport";
 import { Reports } from "./pages/Reports";
 import { SingUp } from "./pages/SignUp";
 import { Sing } from "./pages/Sing";
+import { About } from "./pages/About";
+import { Stories } from "./pages/Stories";
+
 
 
 export default function App() {
@@ -16,6 +19,8 @@ export default function App() {
       <Route path="/Reports" element={<Reports />} />
       <Route path="/SingUp" element={<SingUp />} />
       <Route path="/Sing" element={<Sing />} />
+      <Route path="/About" element={<About/>} />
+      <Route path="/Stories" element={<Stories/>} />
     </Routes>
 
   );

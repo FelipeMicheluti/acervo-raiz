@@ -5,7 +5,7 @@ import { Header } from "../../components/Header";
 
 export const Sing = () => {
     return (
-        <div className="flex flex-col w-full min-h-screen bg-[#7A1D1D] text-white">
+        <div className="flex flex-col w-full min-h-screen bg-[#7A1D1D] text-white italic">
             <Header />
 
             <div className="flex justify-center items-center w-full mt-20">
@@ -16,13 +16,13 @@ export const Sing = () => {
                         <div className="text-6xl"> 
                             <User size={60}/>
                         </div>
-                        <span className="mt-2 text-sm tracking-widest">CRIE SUA CONTA</span>
+                        <span className="mt-2 text-sm tracking-widest">Entre no Acervo Raiz</span>
                     </div>
 
                    
                     <form className="mt-6 w-full flex flex-col text-black">
-                        <label className="text-sm">Name/Email</label>
-                        <input className="border p-2 mb-3 rounded" type="text" />
+                        <label className="text-sm">Email</label>
+                        <input className="border p-2 mb-3 rounded" type="email" />
 
                         <label className="text-sm">Password</label>
                         <input className="border p-2 mb-4 rounded" type="password" />
