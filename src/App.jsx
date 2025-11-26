@@ -2,7 +2,7 @@ import { React } from "react"
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Reports } from "./pages/Reports";
 import { SingUp } from "./pages/SignUp";
-import { Sing } from "./pages/Sing";
+import { SignIn } from "./pages/SignIn";
 import { About } from "./pages/About";
 import { Stories } from "./pages/Stories";
 import { HomePage } from "./pages/Home/indx";
@@ -16,13 +16,13 @@ export default function App() {
 
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/Create" element={<CreatedReport />} />
-      <Route path="/Reports" element={<Reports />} />
-      <Route path="/SingUp" element={<SingUp />} />
-      <Route path="/Sing" element={<Sing />} />
-      <Route path="/About" element={<About/>} />
-      <Route path="/Stories" element={<Stories/>} />
-      <Route path="/Story" element={<StoryPage/>} />
+      <Route path="/cadastro" element={<SingUp />} />
+      <Route path="/login" element={<SignIn />} />
+      <Route path="/relatos" element={<Stories/>} />
+      <Route path="/relatos/novo" element={<Reports />} />
+      <Route path="/relatos/:id" element={<StoryPage/>} />
+      <Route path="/sobre" element={<About/>} />
+      
     </Routes>
 
   );

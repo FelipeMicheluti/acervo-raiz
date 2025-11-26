@@ -4,6 +4,7 @@ import { Header } from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Search } from "lucide-react";
 import { BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 export const HomePage = () => {
@@ -64,8 +65,9 @@ export const HomePage = () => {
                     <p className="mt-3 font-light text-balance"> O Acervo raiz é dedicado a preservar e compatilhar as historias orias,lendas e contos que formam
                         o rico mosaico cultural de São Paulo. Cada narrativa registrada aqui é um testemunho vivo d nossa tradição e identidade coletiva.
                     </p>
-
+                    <Link to={"/sobre"}>
                     <button className="hover:text-gray-800 w-55 rounded-full mt-2 bg-[#7A1D1D]">Saiba Mais Sobre o Projeto</button>
+                    </Link>
                 </div>
             </div>
 

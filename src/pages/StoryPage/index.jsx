@@ -3,7 +3,7 @@ import { Header } from "../../components/Header";
 import Footer from "../../components/Footer";
 
 
-export const StoryPage = ({ story }) => {
+export const StoryPage = ({ story = {} }) => {
   
   return (
     <div className="flex flex-col w-full min-h-screen bg-[#7A1D1D] text-white italic">

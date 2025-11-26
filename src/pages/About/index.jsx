@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { Users } from "lucide-react";
 import { GraduationCap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 export const About = () => {
@@ -57,13 +58,14 @@ export const About = () => {
             <section className="w-full px-6 py-16 flex flex-col items-center text-center">
                 <h2 className="text-3xl font-bold mb-6">Como Funciona</h2>
                 <p className="max-w-4xl text-lg opacity-90 mb-8">
-                    Coletamos, organizamos e compartilhamos histórias orais de diferentes regiões de São Paulo.  
+                    Coletamos, organizamos e compartilhamos histórias orais de diferentes regiões de São Paulo.
                     Cada narrativa é registrada com informações sobre sua origem e contexto cultural.
                 </p>
-
-                <button className="bg-white text-[#7A1D1D] font-semibold px-8 py-3 rounded-full hover:opacity-80 transition">
-                    Explore as Histórias
-                </button>
+                <Link to={"/relatos"}>
+                    <button className="bg-white text-[#7A1D1D] font-semibold px-8 py-3 rounded-full hover:opacity-80 transition">
+                        Explore as Histórias
+                    </button>
+                </Link>
             </section>
 
             <Footer />
