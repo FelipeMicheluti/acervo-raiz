@@ -5,9 +5,8 @@ import { SingUp } from "./pages/SignUp";
 import { SignIn } from "./pages/SignIn";
 import { About } from "./pages/About";
 import { Stories } from "./pages/Stories";
-import { HomePage } from "./pages/Home/indx";
-import { CreatedReport } from "./pages/CreateReport";
 import { StoryPage } from "./pages/StoryPage";
+import { HomePage } from "./pages/Home";
 
 
 

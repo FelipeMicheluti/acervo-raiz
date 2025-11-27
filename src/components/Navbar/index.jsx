@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Home, LogIn, UserPlus, Send } from 'lucide-react';
+import { Book } from "lucide-react";
+
 
 
 export const Navbar = () => {
@@ -25,12 +27,18 @@ export const Navbar = () => {
         <Home className="w-5 h-5" />
       </Link>
 
-      {token && (<Link
-          to="/relatos/novo"
-          className="flex items-center hover:text-[#7A1D1D] transition-colors" >
-          <Send className="w-5 h-5 mr-1" />
-        </Link>)}
 
+      <Link
+        to="/relatos"
+        className="flex items-center hover:text-[#7A1D1D] transition-colors" >
+        <Book className="w-5 h-5" />
+      </Link>
+
+      {token && (<Link
+        to="/relatos/novo"
+        className="flex items-center hover:text-[#7A1D1D] transition-colors" >
+        <Send className="w-5 h-5 mr-1" />
+      </Link>)}
 
       {!token ? <><Link
         to="/login"
