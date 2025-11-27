@@ -21,7 +21,7 @@ export default function Footer() {
 
                 
                 <div className="flex space-x-6 mt-4 md:mt-0">
-                    <a href="sobre" target="_blank" className="hover:text-gray-400 transition">Sobre</a>
+                    <a href="/sobre" target="_blank" className="hover:text-gray-400 transition">Sobre</a>
                     <a href="mailto:michelutifelipe@gmail.com" target="_blank" className="hover:text-gray-400 transition">Contato</a>
                     <a href="#" className="hover:text-gray-400 transition">Pr</a>
                 </div>

@@ -1,8 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { Home, LogIn, UserPlus, Send } from 'lucide-react';
 
-import { Home, LogIn, UserPlus } from 'lucide-react';
-import { Send } from "lucide-react";
 
 export const Navbar = () => {
   const navigate = useNavigate()
@@ -26,9 +25,7 @@ export const Navbar = () => {
         <Home className="w-5 h-5" />
       </Link>
 
-      {token && (
-
-        <Link
+      {token && (<Link
           to="/relatos/novo"
           className="flex items-center hover:text-[#7A1D1D] transition-colors" >
           <Send className="w-5 h-5 mr-1" />
