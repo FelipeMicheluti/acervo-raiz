@@ -3,42 +3,34 @@ import Footer from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { Upload } from "lucide-react";
 import { useState } from "react";
+import { useEffect } from "react";
 
 export const Reports = () => {
     const token = localStorage.getItem("token");
 
-
     const [title, setTitle] = useState("");
-    const [summary, setSummary] = useState("");
     const [content, setContent] = useState("");
     const [originLocation, setOriginLocation] = useState("");
-    const [region, setRegion] = useState("");
+    const [categories, setCategories] = useState([])
     const [category, setCategory] = useState("");
 
-
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
-    const [success, setSuccess] = useState(null);
-
+    useEffect(() => {
+        axios.get("/category", { baseURL: import.meta.env.VITE_API_URL })
+            .then(response => setCategories(response.data))
+            .catch(error => console.error({ getCategoriesError: error }))
+    }, [])
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        setError(null);
-        setSuccess(null);
-
-
-   
-        setIsLoading(true);
-
         const payload = {
             title,
-            summary,
             content,
             originLocation,
-            region,
-            category
+            categoryId: category
         };
+
+        console.log({payload})
 
         try {
             const apiUrl = import.meta.env.VITE_API_URL;
@@ -52,22 +44,13 @@ export const Reports = () => {
                 },
             });
 
-            setSuccess("História enviada com sucesso e aguardando aprovação!");
-
-
             setTitle("");
-            setSummary("");
             setContent("");
             setOriginLocation("");
-            setRegion("");
             setCategory("");
 
         } catch (err) {
             console.error("Erro ao enviar a história:", err.response || err);
-            const errorMessage = err.response?.data?.message || "Ocorreu um erro. Verifique sua conexão ou tente novamente.";
-            setError(errorMessage);
-        } finally {
-            setIsLoading(false);
         }
     };
 
@@ -119,31 +102,23 @@ export const Reports = () => {
                         <div className="grid grid-cols-2 gap-6">
                             <div className="flex flex-col">
                                 <label htmlFor="originLocation" className="text-sm font-semibold mb-1">Local de Origem <span className="text-red-500">*</span></label>
-                                <p className="text-xs text-gray-500 mb-2">Ex.: São Paulo - Centro</p>
-                                <input name="originLocation" id="originLocation" type="text"value={originLocation} onChange={event => setOriginLocation(event.target.value)} className="border p-3 rounded-md shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#7A1D1D]" placeholder="Digite o local" />
+                                <p className="text-xs text-gray-500 mb-2">Ex.: São Paulo - Capital/Litoral</p>
+                                <input name="originLocation" id="originLocation" type="text" value={originLocation} onChange={event => setOriginLocation(event.target.value)} className="border p-3 rounded-md shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#7A1D1D]" placeholder="Digite o local" />
                             </div>
 
-                            <div className="flex flex-col">
-                                <label className="text-sm font-semibold mb-1">Região <span className="text-red-500">*</span></label>
-                                <p className="text-xs text-gray-500 mb-2">Selecione a região</p>
-                                <select className="border p-3 rounded-md bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7A1D1D]">
-                                    <option value="">Selecione a região</option>
-                                    <option>Capital</option>
-                                    <option>Litoral</option>
-                                    <option>Interior</option>
-                                </select>
-                            </div>
+
                         </div>
 
                         <div className="flex flex-col">
                             <label className="text-sm font-semibold mb-1">Categoria <span className="text-red-500">*</span></label>
                             <p className="text-xs text-gray-500 mb-2">Selecione a categoria</p>
-                            <select className="border p-3 rounded-md bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7A1D1D]">
-                                <option value="">Selecione a categoria</option>
-                                <option>Lenda Urbana</option>
-                                <option>Memória Pessoal</option>
-                                <option>Conto Popular</option>
-                                <option>História de Família</option>
+                            <select value={category} onChange={event => setCategory(event.target.value)} className="border p-3 rounded-md bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7A1D1D]">
+                                <option value="" hidden >Selecione a categoria</option>
+                                {
+                                    categories.map(item => (
+                                        <option value={item.id} key={item.id}>{item.name}</option>
+                                    ))
+                                }
                             </select>
                         </div>
 
