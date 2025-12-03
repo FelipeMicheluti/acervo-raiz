@@ -85,32 +85,35 @@ export const Reports = () => {
                         <div className="flex flex-col">
                             <label htmlFor="title" className="text-sm font-semibold mb-1">Título da História <span className="text-red-500">*</span></label>
                             <p className="text-xs text-gray-500 mb-2">Ex.: A Lenda da Cuca no Interior</p>
-                            <input name="title" id="title" type="text" value={title} onChange={event => setTitle(event.target.value)} className="border p-3 rounded-md shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#7A1D1D]" placeholder="Digite o título aqui" />
+                            <input name="title" id="title" type="text" value={title} onChange={event => setTitle(event.target.value)} 
+                            className="border p-3 rounded-md shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#7A1D1D]" 
+                            placeholder="Digite o título aqui" />
                         </div>
-
-
 
                         <div className="flex flex-col">
                             <label htmlFor="content" className="text-sm font-semibold mb-1">História Completa <span className="text-red-500">*</span></label>
                             <p className="text-xs text-gray-500 mb-2">Conte sua história com todos os detalhes...</p>
-                            <textarea name="content" id="content" type="text" value={content} onChange={event => setContent(event.target.value)} className="border p-3 rounded-md shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#7A1D1D] resize-y" rows="8" placeholder="Digite a história completa aqui"></textarea>
+                            <textarea name="content" id="content" type="text" value={content} onChange={event => setContent(event.target.value)} 
+                            className="border p-3 rounded-md shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#7A1D1D] resize-y" 
+                            rows="8" placeholder="Digite a história completa aqui"></textarea>
                         </div>
-
 
                         <div className="grid grid-cols-2 gap-6">
                             <div className="flex flex-col">
                                 <label htmlFor="originLocation" className="text-sm font-semibold mb-1">Local de Origem <span className="text-red-500">*</span></label>
                                 <p className="text-xs text-gray-500 mb-2">Ex.: São Paulo - Capital/Litoral</p>
-                                <input name="originLocation" id="originLocation" type="text" value={originLocation} onChange={event => setOriginLocation(event.target.value)} className="border p-3 rounded-md shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#7A1D1D]" placeholder="Digite o local" />
+                                <input name="originLocation" id="originLocation" type="text" value={originLocation} 
+                                onChange={event => setOriginLocation(event.target.value)} 
+                                className="border p-3 rounded-md shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#7A1D1D]" 
+                                placeholder="Digite o local" />
                             </div>
-
-
                         </div>
 
                         <div className="flex flex-col">
                             <label className="text-sm font-semibold mb-1">Categoria <span className="text-red-500">*</span></label>
                             <p className="text-xs text-gray-500 mb-2">Selecione a categoria</p>
-                            <select value={category} onChange={event => setCategory(event.target.value)} className="border p-3 rounded-md bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7A1D1D]">
+                            <select value={category} onChange={event => setCategory(event.target.value)} 
+                            className="border p-3 rounded-md bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7A1D1D]">
                                 <option value="" hidden >Selecione a categoria</option>
                                 {
                                     categories.map(item => (

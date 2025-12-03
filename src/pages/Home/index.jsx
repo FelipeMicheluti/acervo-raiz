@@ -68,11 +68,7 @@ export const HomePage = () => {
 
                 </div>
             </div>
-
-
-
-
-
+            
             <div className="flex justify-center my-20 mb-7 text-center ">
                 <div className="bg-gray-400 w-2/4 h-45 text-black rounded-2xl ">
                     <BookOpen />
